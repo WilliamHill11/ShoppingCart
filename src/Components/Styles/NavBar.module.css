@@ -1,11 +1,50 @@
 .navBar {
-  background: black;
-  padding: 2.25em;
+  background: rgb(0, 0, 0);
+  padding: 1em;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  position: relative;
 }
 
 a {
   text-decoration: none;
   color: white;
+}
+
+.borderBox {
+  border: 1px solid red;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.borderBox:hover {
+  background-color: rgb(78, 3, 3);
+}
+
+input {
+  background: none;
+  border: none;
+  all: unset;
+  text-align: left;
+  color: white;
+  display: flex;
+  padding: 2px;
+}
+
+input:focus {
+  background: transparent;
+}
+
+.searchIcon {
+  background: url(../../../img/search.png) no-repeat scroll 7px 7px;
+  background-size: 17px;
+  background-position: left;
+}
+
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from '../Styles/NavBar.module.css';
 
 const NavBar = () => {
@@ -10,6 +10,9 @@ const NavBar = () => {
 
   return (
     <div className={styles.navBar}>
+      <Link to={'/'}>
+        <img src="../../../img/logo.png" alt="" width={'250px'} />
+      </Link>
       <NavLink
         to="/"
         style={({ isActive }) => (isActive ? activeStyles : null)}
@@ -28,7 +31,19 @@ const NavBar = () => {
       >
         About
       </NavLink>
-      <img src="../img/addtocart.svg" alt="" />
+      <div className={styles.cart}>
+        <div className={styles.borderBox}>
+          <input type="search" className={styles.searchIcon} />
+        </div>
+        <div className={styles.borderBox}>
+          <img
+            src="../../../../img/cart.png"
+            alt=""
+            width={'20px'}
+            height={'20px'}
+          />
+        </div>
+      </div>
     </div>
   );
 };
