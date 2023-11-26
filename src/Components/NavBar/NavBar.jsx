@@ -11,23 +11,31 @@ const NavBar = () => {
   return (
     <div className={styles.navBar}>
       <Link to={'/'}>
-        <img src="../../../img/logo.png" alt="" width={'250px'} />
+        <img
+          src="../../../img/logo.png"
+          alt=""
+          width={'225px'}
+          height={'85px'}
+        />
       </Link>
       <NavLink
         to="/"
         style={({ isActive }) => (isActive ? activeStyles : null)}
+        className={styles.hoverNav}
       >
         Home
       </NavLink>
       <NavLink
         to="/products"
         style={({ isActive }) => (isActive ? activeStyles : null)}
+        className={styles.hoverNav}
       >
         Products
       </NavLink>
       <NavLink
         to="/about"
         style={({ isActive }) => (isActive ? activeStyles : null)}
+        className={styles.hoverNav}
       >
         About
       </NavLink>
