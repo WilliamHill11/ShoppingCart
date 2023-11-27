@@ -1,8 +1,10 @@
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  padding: 5em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 6em;
   animation: 1s ease-out 0s 1 slideInFromLeft;
+  margin-left: 7em;
+  margin-right: 7em;
 }
 
 .card {
@@ -10,25 +12,26 @@
   cursor: pointer;
   transition-duration: 1s;
   transition-delay: 0.25s ease-in-out;
+  color: black;
 }
 
 .card:hover {
   transform: scale(1.1);
-  /* color: rgb(187, 20, 20); */
   text-shadow: 1px 1px 1px red;
 }
 
 h2 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
   font-size: 2.5rem;
   margin-top: 0.25em;
 }
 
-@keyframes slideInFromLeft {
+/* @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
   }
   100% {
     transform: translateX(0);
   }
-}
+} */

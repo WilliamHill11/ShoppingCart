@@ -5,6 +5,7 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$35.99',
+    id: 1,
   },
   {
     src: '../../../img/2.png',
@@ -12,6 +13,7 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$35.99',
+    id: 2,
   },
   {
     src: '../../../img/3.png',
@@ -19,6 +21,7 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$35.99',
+    id: 3,
   },
   {
     src: '../../../img/4.png',
@@ -26,13 +29,15 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$35.99',
+    id: 4,
   },
   {
     src: '../../../img/5.png',
     alt: 'Straw Hat Luffy Tank Top',
-    width: '225pxpx',
+    width: '225px',
     height: '300px',
     price: '$29.99',
+    id: 5,
   },
   {
     src: '../../../img/6.png',
@@ -40,6 +45,7 @@ export const images = [
     width: '225px',
     height: '300px',
     price: '$29.99',
+    id: 6,
   },
   {
     src: '../../../img/7.png',
@@ -47,6 +53,7 @@ export const images = [
     width: '225px',
     height: '300px',
     price: '$29.99',
+    id: 7,
   },
   {
     src: '../../../img/8.png',
@@ -54,6 +61,7 @@ export const images = [
     width: '225px',
     height: '300px',
     price: '$29.99',
+    id: 8,
   },
   {
     src: '../../../img/9.png',
@@ -61,6 +69,7 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$49.99',
+    id: 9,
   },
   {
     src: '../../../img/10.png',
@@ -68,6 +77,7 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$49.99',
+    id: 10,
   },
   {
     src: '../../../img/11.png',
@@ -75,6 +85,7 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$49.99',
+    id: 11,
   },
   {
     src: '../../../img/12.png',
@@ -82,6 +93,7 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$49.99',
+    id: 12,
   },
   {
     src: '../../../img/13.png',
@@ -89,6 +101,7 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$29.99',
+    id: 13,
   },
   {
     src: '../../../img/14.png',
@@ -96,6 +109,7 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$29.99',
+    id: 14,
   },
   {
     src: '../../../img/15.png',
@@ -103,6 +117,7 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$29.99',
+    id: 15,
   },
   {
     src: '../../../img/16.png',
@@ -110,5 +125,6 @@ export const images = [
     width: '300px',
     height: '300px',
     price: '$29.99',
+    id: 16,
   },
 ];

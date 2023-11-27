@@ -44,12 +44,14 @@ const NavBar = () => {
           <input type="search" className={styles.searchIcon} />
         </div>
         <div className={styles.borderBox}>
-          <img
-            src="../../../../img/cart.png"
-            alt=""
-            width={'20px'}
-            height={'20px'}
-          />
+          <Link to={'/cart'}>
+            <img
+              src="../../../../img/cart.png"
+              alt=""
+              width={'20px'}
+              height={'20px'}
+            />
+          </Link>
         </div>
       </div>
     </div>

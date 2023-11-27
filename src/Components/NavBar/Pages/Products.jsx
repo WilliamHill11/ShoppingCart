@@ -1,15 +1,23 @@
 import { images } from '../../Data/Data';
+import { Link } from 'react-router-dom';
 import styles from '../../Styles/Products.module.css';
+import { useParams } from 'react-router-dom';
 
-const ProductCard = ({ image }) => {
-  const { src, alt, width, height, price } = image;
+export const ProductCard = ({ image }) => {
+  const { id, src, alt, width, height, price } = image;
 
   return (
-    <div className={styles.card}>
-      <img src={src} alt={alt} width={width} height={height} />
-      <h3>{alt}</h3>
-      <p>{price}</p>
-    </div>
+    <>
+      <Link to={`/products/${id}`}>
+        <div className={styles.card}>
+          <img src={src} alt={alt} width={width} height={height} />
+          <h3>{alt}</h3>
+          <p>
+            <i>{price}</i>
+          </p>
+        </div>
+      </Link>
+    </>
   );
 };
 
