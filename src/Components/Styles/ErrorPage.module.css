@@ -1,0 +1,12 @@
+.error {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 3em;
+  height: 100vh;
+  font-size: 5rem;
+}
+
+p {
+  font-weight: bold;
+}
