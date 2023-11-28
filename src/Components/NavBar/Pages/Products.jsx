@@ -1,7 +1,6 @@
 import { images } from '../../Data/Data';
 import { Link } from 'react-router-dom';
 import styles from '../../Styles/Products.module.css';
-import { useParams } from 'react-router-dom';
 
 export const ProductCard = ({ image }) => {
   const { id, src, alt, width, height, price } = image;
@@ -13,7 +12,8 @@ export const ProductCard = ({ image }) => {
           <img src={src} alt={alt} width={width} height={height} />
           <h3>{alt}</h3>
           <p>
-            <i>{price}</i>
+            --
+            <i>{price}</i>--
           </p>
         </div>
       </Link>
@@ -24,8 +24,8 @@ export const ProductCard = ({ image }) => {
 const ProductList = ({ images }) => {
   return (
     <div className={styles.cards}>
-      {images.map((image, index) => (
-        <ProductCard key={index} image={image} />
+      {images.map((image) => (
+        <ProductCard key={image.id} image={image} />
       ))}
     </div>
   );
@@ -34,7 +34,7 @@ const ProductList = ({ images }) => {
 const Products = () => {
   return (
     <div>
-      <h2>Shop</h2>
+      <h2>Shop Collection</h2>
       <ProductList images={images} />
     </div>
   );

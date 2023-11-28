@@ -1,0 +1,93 @@
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 2em;
+}
+
+.productName {
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3rem;
+  padding-bottom: 1em;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: self-start;
+  padding-top: 9.25em;
+}
+
+.sizeButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  padding: 10px;
+}
+
+.sizeButton {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background: white;
+  color: rgb(55, 55, 55);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
+  border: 1px solid rgb(55, 55, 55);
+  line-height: 1.5rem;
+}
+
+.sizeButton:hover {
+  background-color: #9b9a9a;
+}
+
+.active {
+  background-color: black;
+  color: white;
+}
+
+.inStock {
+  display: flex;
+  align-items: center;
+  padding-left: 0.7em;
+  gap: 0.5em;
+  color: grey;
+  margin-top: 1em;
+}
+
+.inStockText {
+  font-size: 0.8rem;
+  font-weight: lighter;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.stockStatus {
+  display: inline-block;
+  width: 12px; /* Adjust the width for the desired size */
+  height: 12px; /* Adjust the height for the desired size */
+  border-radius: 50%;
+  background-color: rgb(17, 192, 17);
+  box-shadow: 1px 1px 10px rgb(48, 177, 48);
+  color: white;
+  text-align: center;
+  line-height: 80px;
+}
+
+p {
+  font-weight: normal;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(32, 31, 31);
+  font-size: 1.5rem;
+}
+
+.worldWide {
+  font-weight: 100;
+  color: grey;
+  font-size: 0.75rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-bottom: 1em;
+}

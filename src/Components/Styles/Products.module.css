@@ -21,17 +21,24 @@
 }
 
 h2 {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 2.5rem;
   margin-top: 0.25em;
+  text-decoration: underline;
 }
 
-/* @keyframes slideInFromLeft {
+h3 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+@keyframes slideInFromLeft {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-75%);
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
-} */
+}
