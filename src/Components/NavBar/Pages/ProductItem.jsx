@@ -1,13 +1,25 @@
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { images } from '../../Data/Data';
 import styles from '../../Styles/ProductItem.module.css';
 
 const ProductItem = () => {
-  const [activeButton, setActiveButton] = useState('Size 1');
   let { id } = useParams();
+  const [activeButton, setActiveButton] = useState('Size 1');
+  const [itemInCart, setItemInCart] = useState([]);
+  const [item, setItem] = useState(null);
+  const [numberOfItems, setNumberOfItems] = useState(1);
 
   const product = images.find((image) => image.id == id);
+
+  const addItem = () => {
+    setItem(product.alt);
+  };
+
+  useEffect(() => {
+    setItemInCart([...itemInCart, item]);
+    console.log(itemInCart);
+  }, [item]);
 
   if (!product) {
     return (
@@ -19,6 +31,15 @@ const ProductItem = () => {
 
   const handleButtonClick = (size) => {
     setActiveButton(size);
+  };
+
+  const decreaseItem = () => {
+    if (numberOfItems === 1) return;
+    setNumberOfItems(numberOfItems - 1);
+  };
+
+  const increaseItem = () => {
+    setNumberOfItems(numberOfItems + 1);
   };
 
   return (
@@ -40,7 +61,7 @@ const ProductItem = () => {
       )}
       <div className={styles.productInfo}>
         <h2 className={styles.productName}>{product.alt}</h2>
-        <p>
+        <p className={styles.productDetailFont}>
           <i>{product.price} CAD</i>
         </p>
         <p className={styles.worldWide}>
@@ -99,6 +120,30 @@ const ProductItem = () => {
         <div className={styles.inStock}>
           <div className={styles.stockStatus}></div>
           <p className={styles.inStockText}>IN STOCK</p>
+        </div>
+        <div className={styles.increment}>
+          <button className={styles.btn} onClick={decreaseItem}>
+            -
+          </button>
+          <div className={styles.number}>{numberOfItems}</div>
+          <button className={styles.btn} onClick={increaseItem}>
+            +
+          </button>
+        </div>
+        <button className={styles.addToCart} onClick={addItem}>
+          ADD TO CART
+        </button>
+        <div>
+          <ul className={styles.description}>
+            <li>100% Ringspun Cotton</li>
+            <li>Heavyweight, 280gsm</li>
+            <li>Unisex T-Shirt</li>
+            <li>DTG Printing</li>
+            <li>Pre-Shrunk</li>
+            <li>Round Neck</li>
+            <li>Double Stitched Collar & Sleeves</li>
+            <li>{itemInCart}</li>
+          </ul>
         </div>
       </div>
     </div>
