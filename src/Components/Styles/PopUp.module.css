@@ -1,0 +1,60 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  bottom: 0;
+  width: 30%; /* Adjust the width as needed */
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px #000000;
+  z-index: 1000;
+  animation: slide-in 1s ease-in-out;
+}
+
+.popupInner {
+  text-align: center;
+}
+
+.popup.active {
+  right: 0%; /* Move the pop-up to the center when it is active */
+  transition: right 1s ease-in-out;
+}
+
+.popup.hide {
+  animation: slide-out 1s ease-in-out; /* Use the animation property for sliding out */
+}
+
+.hide {
+  background-color: #000000;
+}
+
+.exitBtn {
+  background: green;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
