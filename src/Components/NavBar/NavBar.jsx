@@ -7,11 +7,17 @@ import PopUp from './PopUp';
 const NavBar = () => {
   const [showPopUp, setShowPopUp] = useState(false);
 
+  const handleOverlayClick = (e) => {
+    if (!e.target.classList.contains(style.overlay)) {
+      handleClosePopUp();
+    }
+  };
+
   const handleImageClick = () => {
     setShowPopUp(true);
   };
 
-  const handleClosePopUp = (e) => {
+  const handleClosePopUp = () => {
     setShowPopUp(false);
   };
 
@@ -88,7 +94,13 @@ const NavBar = () => {
             height={'18px'}
           />
         </div>
-        {showPopUp && <PopUp onClose={handleClosePopUp} />}
+        {showPopUp && (
+          <PopUp
+            onClose={handleClosePopUp}
+            showPopUp={showPopUp}
+            handleOverlayClick={handleOverlayClick}
+          />
+        )}
       </div>
     </div>
   );

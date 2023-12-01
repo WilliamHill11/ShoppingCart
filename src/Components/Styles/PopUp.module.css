@@ -11,9 +11,9 @@
 .popup {
   position: fixed;
   top: 0;
-  right: -300px;
+  right: 0;
   bottom: 0;
-  width: 30%; /* Adjust the width as needed */
+  width: 30%;
   background-color: white;
   padding: 20px;
   box-shadow: 0px 0px 10px 0px #000000;
@@ -25,21 +25,8 @@
   text-align: center;
 }
 
-.popup.active {
-  right: 0%; /* Move the pop-up to the center when it is active */
-  transition: right 1s ease-in-out;
-}
-
-.popup.hide {
-  animation: slide-out 1s ease-in-out; /* Use the animation property for sliding out */
-}
-
-.hide {
-  background-color: #000000;
-}
-
-.exitBtn {
-  background: green;
+.slideOut {
+  transition: slide-out 1s ease-in-out;
 }
 
 @keyframes slide-in {
@@ -50,6 +37,7 @@
     transform: translateX(0);
   }
 }
+
 @keyframes slide-out {
   0% {
     transform: translateX(0);
