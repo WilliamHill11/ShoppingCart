@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from '../Styles/NavBar.module.css';
-import style from '../Styles/PopUp.module.css';
-import PopUp from './PopUp';
+import style from '../Styles/Cart.module.css';
+import Cart from './Cart';
 
 const NavBar = () => {
   const [showPopUp, setShowPopUp] = useState(false);
 
   const handleOverlayClick = (e) => {
-    if (!e.target.classList.contains(style.overlay)) {
+    if (e.target.classList.contains(style.overlay)) {
       handleClosePopUp();
     }
   };
@@ -95,7 +95,7 @@ const NavBar = () => {
           />
         </div>
         {showPopUp && (
-          <PopUp
+          <Cart
             onClose={handleClosePopUp}
             showPopUp={showPopUp}
             handleOverlayClick={handleOverlayClick}

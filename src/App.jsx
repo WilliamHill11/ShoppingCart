@@ -6,7 +6,6 @@ import Home from './Components/NavBar/Pages/Home';
 import Products from './Components/NavBar/Pages/Products';
 import ProductItem from './Components/NavBar/Pages/ProductItem';
 import About from './Components/NavBar/Pages/About';
-import Cart from './Components/NavBar/Pages/Cart';
 import ErrorPage from './Components/NavBar/Pages/ErrorPage';
 
 function App() {
@@ -33,7 +32,6 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductItem />} />
         <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>

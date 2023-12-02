@@ -18,7 +18,6 @@ const ProductItem = () => {
 
   useEffect(() => {
     setItemInCart([...itemInCart, item]);
-    console.log(itemInCart);
   }, [item]);
 
   if (!product) {
