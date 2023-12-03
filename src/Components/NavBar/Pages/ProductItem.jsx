@@ -2,9 +2,11 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { images } from '../../Data/Data';
 import styles from '../../Styles/ProductItem.module.css';
+import { useCart } from './CartContext';
 
 const ProductItem = () => {
   let { id } = useParams();
+  const { addToCart } = useCart();
   const [activeButton, setActiveButton] = useState('Size 1');
   const [itemInCart, setItemInCart] = useState([]);
   const [item, setItem] = useState(null);
@@ -12,8 +14,32 @@ const ProductItem = () => {
 
   const product = images.find((image) => image.id == id);
 
-  const addItem = () => {
-    setItem(product.alt);
+  const sizeMapping = {
+    'Size 1': 'XS',
+    'Size 2': 'S',
+    'Size 3': 'M',
+    'Size 4': 'L',
+    'Size 5': 'XL',
+    'Size 6': 'XXL',
+  };
+
+  const addItemToCart = () => {
+    const selectedSize = sizeMapping[activeButton];
+
+    if (!selectedSize) {
+      console.error('Invalid size mapping');
+      return;
+    }
+
+    const item = {
+      id: product.id,
+      name: product.alt,
+      picture: product.src,
+      size: selectedSize,
+      quantity: numberOfItems,
+      price: product.price,
+    };
+    addToCart(item);
   };
 
   useEffect(() => {
@@ -34,11 +60,11 @@ const ProductItem = () => {
 
   const decreaseItem = () => {
     if (numberOfItems === 1) return;
-    setNumberOfItems(numberOfItems - 1);
+    setNumberOfItems((prevItems) => prevItems - 1);
   };
 
   const increaseItem = () => {
-    setNumberOfItems(numberOfItems + 1);
+    setNumberOfItems((prevItems) => prevItems + 1);
   };
 
   return (
@@ -129,7 +155,7 @@ const ProductItem = () => {
             +
           </button>
         </div>
-        <button className={styles.addToCart} onClick={addItem}>
+        <button className={styles.addToCart} onClick={addItemToCart}>
           ADD TO CART
         </button>
         <div>
