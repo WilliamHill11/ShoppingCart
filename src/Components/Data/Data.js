@@ -4,7 +4,7 @@ export const images = [
     alt: 'Ultra Instinct Vintage T-Shirt',
     width: '300px',
     height: '300px',
-    price: '$35.99',
+    price: 35.99,
     id: 1,
   },
   {
@@ -12,7 +12,7 @@ export const images = [
     alt: 'Majin Vegeta Vintage T-Shirt',
     width: '300px',
     height: '300px',
-    price: '$35.99',
+    price: 35.99,
     id: 2,
   },
   {
@@ -20,7 +20,7 @@ export const images = [
     alt: 'Gohan Vintage T-Shirt',
     width: '300px',
     height: '300px',
-    price: '$35.99',
+    price: 35.99,
     id: 3,
   },
   {
@@ -28,7 +28,7 @@ export const images = [
     alt: 'Kid Buu Vintage T-Shirt',
     width: '300px',
     height: '300px',
-    price: '$35.99',
+    price: 35.99,
     id: 4,
   },
   {
@@ -36,7 +36,7 @@ export const images = [
     alt: 'Straw Hat Luffy Tank Top',
     width: '225px',
     height: '300px',
-    price: '$29.99',
+    price: 29.99,
     id: 5,
   },
   {
@@ -44,7 +44,7 @@ export const images = [
     alt: 'Berserker Armor V2 Tank Top',
     width: '225px',
     height: '300px',
-    price: '$29.99',
+    price: 29.99,
     id: 6,
   },
   {
@@ -52,7 +52,7 @@ export const images = [
     alt: 'Madness Tank Top',
     width: '225px',
     height: '300px',
-    price: '$29.99',
+    price: 29.99,
     id: 7,
   },
   {
@@ -60,7 +60,7 @@ export const images = [
     alt: 'Big Three Tank Top',
     width: '225px',
     height: '300px',
-    price: '$29.99',
+    price: 29.99,
     id: 8,
   },
   {
@@ -68,7 +68,7 @@ export const images = [
     alt: 'Moonlit Night Vintage Hoodie',
     width: '300px',
     height: '300px',
-    price: '$49.99',
+    price: 49.99,
     id: 9,
   },
   {
@@ -76,7 +76,7 @@ export const images = [
     alt: 'Vegeta Vintage Hoodie',
     width: '300px',
     height: '300px',
-    price: '$49.99',
+    price: 49.99,
     id: 10,
   },
   {
@@ -84,7 +84,7 @@ export const images = [
     alt: 'Itachi Vintage Hoodie',
     width: '300px',
     height: '300px',
-    price: '$49.99',
+    price: 49.99,
     id: 11,
   },
   {
@@ -92,7 +92,7 @@ export const images = [
     alt: 'Bounty Vintage Hoodie',
     width: '300px',
     height: '300px',
-    price: '$49.99',
+    price: 49.99,
     id: 12,
   },
   {
@@ -100,7 +100,7 @@ export const images = [
     alt: 'Sun God Nika Vintage T-Shirt',
     width: '300px',
     height: '300px',
-    price: '$29.99',
+    price: 29.99,
     id: 13,
   },
   {
@@ -108,7 +108,7 @@ export const images = [
     alt: 'Ride Vintage T-Shirt',
     width: '300px',
     height: '300px',
-    price: '$29.99',
+    price: 29.99,
     id: 14,
   },
   {
@@ -116,7 +116,7 @@ export const images = [
     alt: 'Nothing Happened Vintage T-Shirt',
     width: '300px',
     height: '300px',
-    price: '$29.99',
+    price: 29.99,
     id: 15,
   },
   {
@@ -124,7 +124,7 @@ export const images = [
     alt: 'Killua Vintage T-Shirt',
     width: '300px',
     height: '300px',
-    price: '$29.99',
+    price: 29.99,
     id: 16,
   },
 ];

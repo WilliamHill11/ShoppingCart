@@ -1,20 +1,18 @@
 import styles from '../Styles/Cart.module.css';
 import { useParams } from 'react-router-dom';
-import { images } from '../Data/Data';
+// import { images } from '../Data/Data';
 import { useState } from 'react';
 import { useCart } from './Pages/CartContext';
 
 const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
+  let { id } = useParams();
   const [numberOfItems, setNumberOfItems] = useState(1);
   const { cartItems, removeFromCart, setCartItems } = useCart();
-  // let { id } = useParams();
-  // const product = images.find((image) => image.id == id);
 
   const decreaseItem = (itemId) => {
     const updatedCart = cartItems.map((item) =>
       item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item
     );
-    // removeFromCart(itemId);
     setCartItems(updatedCart);
   };
 
@@ -22,12 +20,26 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
     const updatedCart = cartItems.map((item) =>
       item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
     );
-    // removeFromCart(itemId);
     setCartItems(updatedCart);
   };
 
   const removeFromCartHandler = (itemId) => {
     removeFromCart(itemId);
+  };
+
+  const calculateItemTotal = (item) => {
+    if (!item || isNaN(item.price) || isNaN(item.quantity)) {
+      console.error('Invalid item or missing price/quantity:', item);
+      return 0;
+    }
+    return item.price * item.quantity;
+  };
+
+  const calculateSubtotal = () => {
+    return cartItems.reduce(
+      (total, item) => total + calculateItemTotal(item),
+      0
+    );
   };
 
   return (
@@ -41,14 +53,21 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
           <br />
           <hr />
           <br />
-          <div className={styles.items}>
-            <ul>
-              {cartItems.map((item) => (
-                <li key={item.id}>
-                  <img src={item.picture} alt={item.size} height={'150px'} />
-                  <div>
-                    <h4>{item.name}</h4>
-                    <p>Size: {item.size}</p>
+          <div>
+            {cartItems.map((item, index) => (
+              <div key={item.id}>
+                <li className={styles.items}>
+                  <img
+                    src={item.picture}
+                    alt={item.picture}
+                    height={'175px'}
+                    width={'175px'}
+                  />
+                  <div className={styles.separate}>
+                    <div>
+                      <h4>{item.name}</h4>
+                      <p>Size: {item.size}</p>
+                    </div>
                     <div className={styles.increment}>
                       <button
                         className={styles.btn}
@@ -64,31 +83,34 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
                         +
                       </button>
                     </div>
-                    <div>
-                      <button
-                        onClick={() => removeFromCartHandler(item.id)}
-                        className={styles.closeBtn}
-                      >
-                        X
-                      </button>
-                      <p>{item.price}</p>
-                    </div>
                   </div>
-                  {/* <p>{item.size}</p> */}
-                  {/* <p>{item.quantity}</p> */}
-                  {/* <p>{item.price}</p> */}
+                  <div>
+                    <button
+                      onClick={() => removeFromCartHandler(item.id)}
+                      className={styles.closeBtn}
+                    >
+                      X
+                    </button>
+                    <p className={styles.priceContainer}>{item.price}</p>
+                  </div>
                 </li>
-              ))}
-            </ul>
+                {index < cartItems.length - 1 && <hr />}
+              </div>
+            ))}
+            <br />
           </div>
         </div>
         <div>
-          <div>
+          <div className={styles.totalCost}>
             <p>Subtotal</p>
-            <p>$0</p>
+            <p>
+              <p>${calculateSubtotal().toFixed(2)}</p>
+            </p>
           </div>
-          <button onClick={onClose}>CONTINUE SHOPPING</button>
-          <button>CHECKOUT NOW</button>
+          <button className={styles.continueShoppingBtn} onClick={onClose}>
+            CONTINUE SHOPPING
+          </button>
+          <button className={styles.checkoutNowBtn}>CHECKOUT NOW</button>
         </div>
       </div>
     </div>

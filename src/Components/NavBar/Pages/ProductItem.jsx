@@ -3,14 +3,16 @@ import { useState, useEffect } from 'react';
 import { images } from '../../Data/Data';
 import styles from '../../Styles/ProductItem.module.css';
 import { useCart } from './CartContext';
+import Cart from '../Cart';
 
-const ProductItem = () => {
+const ProductItem = ({ showPopUp }) => {
   let { id } = useParams();
   const { addToCart } = useCart();
   const [activeButton, setActiveButton] = useState('Size 1');
   const [itemInCart, setItemInCart] = useState([]);
   const [item, setItem] = useState(null);
   const [numberOfItems, setNumberOfItems] = useState(1);
+  const [showCartPopup, setShowCartPopup] = useState(false);
 
   const product = images.find((image) => image.id == id);
 
@@ -40,10 +42,12 @@ const ProductItem = () => {
       price: product.price,
     };
     addToCart(item);
+    setItemInCart(selectedSize);
+    setShowCartPopup(true);
   };
 
   useEffect(() => {
-    setItemInCart([...itemInCart, item]);
+    setItemInCart((prevItemInCart) => [...prevItemInCart, item]);
   }, [item]);
 
   if (!product) {
@@ -87,7 +91,7 @@ const ProductItem = () => {
       <div className={styles.productInfo}>
         <h2 className={styles.productName}>{product.alt}</h2>
         <p className={styles.productDetailFont}>
-          <i>{product.price} CAD</i>
+          <i> ${product.price} CAD</i>
         </p>
         <p className={styles.worldWide}>
           {'>>'} WORLDWIDE SHIPPING & 30-DAY RETURNS {' <<'}
@@ -158,6 +162,7 @@ const ProductItem = () => {
         <button className={styles.addToCart} onClick={addItemToCart}>
           ADD TO CART
         </button>
+        {showCartPopup && <Cart onClose={() => setShowCartPopup(false)} />}
         <div>
           <ul className={styles.description}>
             <li>100% Ringspun Cotton</li>
@@ -167,7 +172,6 @@ const ProductItem = () => {
             <li>Pre-Shrunk</li>
             <li>Round Neck</li>
             <li>Double Stitched Collar & Sleeves</li>
-            <li>{itemInCart}</li>
           </ul>
         </div>
       </div>

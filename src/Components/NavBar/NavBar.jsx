@@ -1,14 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from '../Styles/NavBar.module.css';
 import style from '../Styles/Cart.module.css';
 import Cart from './Cart';
 
-const NavBar = () => {
-  const [showPopUp, setShowPopUp] = useState(false);
-
+const NavBar = ({ showPopUp, setShowPopUp }) => {
   const handleOverlayClick = (e) => {
-    if (e.target.classList.contains(style.overlay)) {
+    if (!e.target.classList.contains(style.overlay)) {
       handleClosePopUp();
     }
   };
@@ -17,29 +15,10 @@ const NavBar = () => {
     setShowPopUp(true);
   };
 
-  const handleClosePopUp = () => {
+  const handleClosePopUp = (e) => {
+    // e.stopPropagation();
     setShowPopUp(false);
   };
-
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      // Check if the click target is not within the popup
-      if (showPopUp && !event.target.closest(`.${style.popup}`)) {
-        handleClosePopUp();
-      }
-    };
-
-    // Attach the event listener
-    const timeoutId = setTimeout(() => {
-      document.addEventListener('click', handleOutsideClick);
-    }, 100);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      clearTimeout(timeoutId);
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, [showPopUp]);
 
   const activeStyles = {
     fontWeight: 'bold',

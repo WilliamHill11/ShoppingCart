@@ -13,7 +13,7 @@ export const ProductCard = ({ image }) => {
           <h3>{alt}</h3>
           <p>
             --
-            <i>{price}</i>--
+            <i>${price}</i>--
           </p>
         </div>
       </Link>
