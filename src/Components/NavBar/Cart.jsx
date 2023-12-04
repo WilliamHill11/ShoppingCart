@@ -27,6 +27,11 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
     removeFromCart(itemId);
   };
 
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   const calculateItemTotal = (item) => {
     if (!item || isNaN(item.price) || isNaN(item.quantity)) {
       console.error('Invalid item or missing price/quantity:', item);
@@ -45,15 +50,17 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
   return (
     <div className={styles.overlay} onClick={handleOverlayClick}>
       <div className={`${styles.popup} ${showPopUp ? '' : styles.slideOut}`}>
-        <button onClick={onClose} className={styles.closeBtn}>
-          X
-        </button>
         <div className={styles.popupInner}>
-          <h2 className={styles.cart}>Cart</h2>
+          <div className={styles.center}>
+            <h2 className={styles.cart}>Cart({totalItems})</h2>
+            <button onClick={onClose} className={styles.closeBtn}>
+              X
+            </button>
+          </div>
           <br />
           <hr />
           <br />
-          <div>
+          <div className={styles.container}>
             {cartItems.map((item, index) => (
               <div key={item.id}>
                 <li className={styles.items}>
@@ -84,14 +91,14 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
                       </button>
                     </div>
                   </div>
-                  <div>
+                  <div className={styles.separatePrice}>
                     <button
                       onClick={() => removeFromCartHandler(item.id)}
                       className={styles.closeBtn}
                     >
                       X
                     </button>
-                    <p className={styles.priceContainer}>{item.price}</p>
+                    <p>${item.price}</p>
                   </div>
                 </li>
                 {index < cartItems.length - 1 && <hr />}
