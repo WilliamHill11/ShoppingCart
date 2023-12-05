@@ -7,7 +7,7 @@ import Cart from '../Cart';
 
 const ProductItem = ({ showPopUp, setShowPopUp, handleOverlayClick }) => {
   let { id } = useParams();
-  const { addToCart, cartItems } = useCart();
+  const { cartItems, setCartItems } = useCart();
   const [activeButton, setActiveButton] = useState('Size 1');
   const [itemInCart, setItemInCart] = useState([]);
   const [item, setItem] = useState(null);
@@ -32,16 +32,34 @@ const ProductItem = ({ showPopUp, setShowPopUp, handleOverlayClick }) => {
       return;
     }
 
-    const item = {
-      id: product.id,
-      name: product.alt,
-      picture: product.src,
-      size: selectedSize,
-      quantity: numberOfItems,
-      price: product.price,
-    };
-    addToCart(item);
-    setItemInCart(selectedSize);
+    const existingItemIndex = cartItems.findIndex(
+      (item) => item.id === product.id && item.size === selectedSize
+    );
+
+    if (existingItemIndex !== -1) {
+      // If the item exists, update its size and quantity
+      const updatedCart = [...cartItems];
+      updatedCart[existingItemIndex] = {
+        ...updatedCart[existingItemIndex],
+        size: selectedSize,
+        quantity: updatedCart[existingItemIndex].quantity + numberOfItems,
+      };
+      setCartItems(updatedCart);
+      setItemInCart(selectedSize);
+    } else {
+      // If the item doesn't exist, add a new item to the cart
+      const newItem = {
+        id: product.id,
+        name: product.alt,
+        picture: product.src,
+        size: selectedSize,
+        quantity: numberOfItems,
+        price: product.price,
+      };
+      setCartItems((prevCartItems) => [...prevCartItems, newItem]);
+      setItemInCart(selectedSize);
+    }
+
     setShowPopUp(true);
   };
 
