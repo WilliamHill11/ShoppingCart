@@ -8,6 +8,8 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
   let { id } = useParams();
   const [numberOfItems, setNumberOfItems] = useState(1);
   const { cartItems, removeFromCart, setCartItems } = useCart();
+  console.log('cartItems:', cartItems);
+  console.log('setCartItems:', setCartItems);
 
   const decreaseItem = (itemId) => {
     const updatedCart = cartItems.map((item) =>
@@ -110,9 +112,7 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
         <div>
           <div className={styles.totalCost}>
             <p>Subtotal</p>
-            <p>
-              <p>${calculateSubtotal().toFixed(2)}</p>
-            </p>
+            <p>${calculateSubtotal().toFixed(2)}</p>
           </div>
           <button className={styles.continueShoppingBtn} onClick={onClose}>
             CONTINUE SHOPPING

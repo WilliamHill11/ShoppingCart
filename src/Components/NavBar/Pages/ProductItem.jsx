@@ -5,14 +5,13 @@ import styles from '../../Styles/ProductItem.module.css';
 import { useCart } from './CartContext';
 import Cart from '../Cart';
 
-const ProductItem = ({ showPopUp }) => {
+const ProductItem = ({ showPopUp, setShowPopUp, handleOverlayClick }) => {
   let { id } = useParams();
-  const { addToCart } = useCart();
+  const { addToCart, cartItems } = useCart();
   const [activeButton, setActiveButton] = useState('Size 1');
   const [itemInCart, setItemInCart] = useState([]);
   const [item, setItem] = useState(null);
   const [numberOfItems, setNumberOfItems] = useState(1);
-  const [showCartPopup, setShowCartPopup] = useState(false);
 
   const product = images.find((image) => image.id == id);
 
@@ -43,7 +42,7 @@ const ProductItem = ({ showPopUp }) => {
     };
     addToCart(item);
     setItemInCart(selectedSize);
-    setShowCartPopup(true);
+    setShowPopUp(true);
   };
 
   useEffect(() => {
@@ -166,7 +165,12 @@ const ProductItem = ({ showPopUp }) => {
           <button className={styles.addToCart} onClick={addItemToCart}>
             ADD TO CART
           </button>
-          {showCartPopup && <Cart onClose={() => setShowCartPopup(false)} />}
+          {showPopUp && (
+            <Cart
+              onClose={() => setShowPopUp(false)}
+              handleOverlayClick={handleOverlayClick}
+            />
+          )}
           <div>
             <ul className={styles.description}>
               <li>100% Ringspun Cotton</li>

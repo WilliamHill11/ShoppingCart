@@ -1,22 +1,14 @@
 import { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from '../Styles/NavBar.module.css';
-import style from '../Styles/Cart.module.css';
 import Cart from './Cart';
 
-const NavBar = ({ showPopUp, setShowPopUp }) => {
-  const handleOverlayClick = (e) => {
-    if (!e.target.classList.contains(style.overlay)) {
-      handleClosePopUp();
-    }
-  };
-
-  const handleImageClick = () => {
+const NavBar = ({ showPopUp, setShowPopUp, handleOverlayClick }) => {
+  const handleCart = () => {
     setShowPopUp(true);
   };
 
-  const handleClosePopUp = (e) => {
-    // e.stopPropagation();
+  const handleCloseCart = () => {
     setShowPopUp(false);
   };
 
@@ -63,7 +55,7 @@ const NavBar = ({ showPopUp, setShowPopUp }) => {
         </div>
         <div
           className={styles.borderBox}
-          onClick={handleImageClick}
+          onClick={handleCart}
           style={{ cursor: 'pointer' }}
         >
           <img
@@ -75,7 +67,7 @@ const NavBar = ({ showPopUp, setShowPopUp }) => {
         </div>
         {showPopUp && (
           <Cart
-            onClose={handleClosePopUp}
+            onClose={handleCloseCart}
             showPopUp={showPopUp}
             handleOverlayClick={handleOverlayClick}
           />

@@ -7,6 +7,10 @@
   left: 125px;
 }
 
+.back:hover {
+  text-shadow: 1px 1px 1px red;
+}
+
 .product {
   display: flex;
   justify-content: center;
