@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
 *,
 *::before,
 *::after {
@@ -11,4 +13,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+li {
+  font-weight: normal;
+  font-family: 'Handlee', cursive;
+  color: rgb(32, 31, 31);
 }

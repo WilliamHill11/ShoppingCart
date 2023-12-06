@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 .navBar {
   background: rgb(0, 0, 0);
   padding: 1em;
@@ -14,11 +16,19 @@
 a {
   text-decoration: none;
   color: white;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.25rem;
 }
 
 .borderBox {
   border: 1px solid red;
   padding: 0.5em;
+  border-radius: 5px;
+}
+
+.borderBoxCart {
+  border: 1px solid red;
+  padding: 0.5em 0.6em;
   border-radius: 5px;
 }
 

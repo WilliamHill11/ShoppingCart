@@ -190,15 +190,35 @@ const ProductItem = ({ showPopUp, setShowPopUp, handleOverlayClick }) => {
             />
           )}
           <div>
-            <ul className={styles.description}>
-              <li>100% Ringspun Cotton</li>
-              <li>Heavyweight, 280gsm</li>
-              <li>Unisex T-Shirt</li>
-              <li>DTG Printing</li>
-              <li>Pre-Shrunk</li>
-              <li>Round Neck</li>
-              <li>Double Stitched Collar & Sleeves</li>
-            </ul>
+            {(id >= 1 && id <= 4) || id > 12 ? (
+              <ul className={styles.description}>
+                <li>100% Ringspun Cotton</li>
+                <li>Heavyweight, 280gsm</li>
+                <li>Unisex T-Shirt</li>
+                <li>DTG Printing</li>
+                <li>Pre-Shrunk</li>
+                <li>Round Neck</li>
+                <li>Double Stitched Collar & Sleeves</li>
+              </ul>
+            ) : id >= 5 && id <= 8 ? (
+              <ul className={styles.description}>
+                <li>100% Cotton</li>
+                <li>Heavyweight, 280gsm</li>
+                <li>Unisex</li>
+                <li>DTG Printing Crystalized</li>
+                <li>Pre-Shrunk</li>
+                <li>Round neck with tapered scoop</li>
+              </ul>
+            ) : (
+              <ul className={styles.description}>
+                <li>100% Cotton</li>
+                <li>Heavyweight, 350gsm</li>
+                <li>Unisex</li>
+                <li>DTG Printing</li>
+                <li>Pre-Shrunk</li>
+                <li>Vintage-Base Styling</li>
+              </ul>
+            )}
           </div>
         </div>
       </div>

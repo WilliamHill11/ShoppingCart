@@ -61,7 +61,7 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
           <br />
           <div className={styles.container}>
             {cartItems.map((item, index) => (
-              <div key={item.id}>
+              <div key={`${item.id} ${item.size}`}>
                 <li className={styles.items}>
                   <img
                     src={item.picture}

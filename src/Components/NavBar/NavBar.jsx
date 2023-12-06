@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from '../Styles/NavBar.module.css';
 import Cart from './Cart';
@@ -54,7 +53,7 @@ const NavBar = ({ showPopUp, setShowPopUp, handleOverlayClick }) => {
           <input type="search" className={styles.searchIcon} />
         </div>
         <div
-          className={styles.borderBox}
+          className={styles.borderBoxCart}
           onClick={handleCart}
           style={{ cursor: 'pointer' }}
         >

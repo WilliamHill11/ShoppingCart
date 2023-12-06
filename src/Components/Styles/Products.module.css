@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -21,15 +23,16 @@
 }
 
 h2 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 2.5rem;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2.75rem;
   margin-top: 0.25em;
   text-decoration: underline;
 }
 
 h3 {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Indie Flower', cursive;
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
 
 @keyframes slideInFromLeft {

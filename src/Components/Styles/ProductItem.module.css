@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
 .back {
   text-align: left;
   color: black;
@@ -88,12 +90,6 @@
   color: white;
   text-align: center;
   line-height: 80px;
-}
-
-p {
-  font-weight: normal;
-  font-family: 'Courier New', Courier, monospace;
-  color: rgb(32, 31, 31);
 }
 
 .productDetailFont {
