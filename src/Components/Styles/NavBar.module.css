@@ -1,34 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 .navBar {
-  background: rgb(0, 0, 0);
-  padding: 1em;
+  background: black;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  position: relative;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.hoverNav:hover {
-  color: rgb(246, 228, 228);
+.navBarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  max-width: 1500px;
+}
+
+.navBarLogo {
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.navItems {
+  height: 80px;
+}
+
+.navMenu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: end;
+  margin-right: 2rem;
+}
+
+.navLinks {
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+}
+
+.navLinks:hover {
+  border-bottom: 4px solid #fff;
+  transition: all 0.2s ease-out;
+}
+
+.menuIcon {
+  display: none;
+}
+
+.icon {
+  color: white;
 }
 
 a {
-  text-decoration: none;
-  color: white;
   font-family: 'Indie Flower', cursive;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
 }
 
 .borderBox {
   border: 1px solid red;
-  padding: 0.5em;
+  padding: 0.3em;
   border-radius: 5px;
 }
 
 .borderBoxCart {
   border: 1px solid red;
-  padding: 0.5em 0.6em;
+  padding: 0.4em 0.6em;
   border-radius: 5px;
 }
 
@@ -61,4 +112,105 @@ input:focus {
   justify-content: center;
   align-items: center;
   gap: 1em;
+}
+
+@media screen and (max-width: 960px) {
+  .NavbarItems {
+    position: relative;
+  }
+
+  .navBarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px; /* Adjust as needed based on your design */
+    left: 0;
+    background-color: rgb(
+      43,
+      42,
+      42
+    ); /* Adjust as needed based on your design */
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adjust as needed based on your design */
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navMenu.active {
+    transform: translateX(0);
+  }
+
+  .cart {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem; /* Adjust as needed based on your design */
+  }
+
+  .borderBoxCart {
+    margin-left: 1rem; /* Adjust as needed based on your design */
+  }
+
+  .navLinks {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .navLinks:hover {
+    background-color: #fff;
+    color: #242424;
+    border-radius: 0;
+  }
+
+  .navbarLogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .menuIcon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .navLinksMobile {
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: #fff;
+    padding: 14px 20px;
+    border: 1px solid #fff;
+    transition: all 0.3s ease-out;
+  }
+
+  .navLinksMobile:hover {
+    background: #fff;
+    color: #242424;
+    transition: 250ms;
+  }
 }

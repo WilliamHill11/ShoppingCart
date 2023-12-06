@@ -6,9 +6,15 @@ const Home = () => {
     <div>
       <div>
         <h2 className={styles.title}>Welcome Saiyan Warriors</h2>
-        <Link to={'/products'}>SHOP NOW</Link>
+        <Link to={'/products'} className={styles.shopNow}>
+          SHOP NOW
+        </Link>
       </div>
-      <img src="../../../../img/home.jpg" alt="" />
+      <img
+        className={styles.homeBackGround}
+        src="../../../../img/home.jpg"
+        alt=""
+      />
     </div>
   );
 };
