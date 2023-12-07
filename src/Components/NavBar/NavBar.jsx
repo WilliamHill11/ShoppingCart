@@ -104,6 +104,7 @@ const NavBar = ({ showPopUp, setShowPopUp, handleOverlayClick }) => {
                 style={{ cursor: 'pointer' }}
               >
                 <img
+                  className={styles.cartIcon}
                   src="../../../../img/cart.png"
                   alt=""
                   width={'18px'}

@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
+* {
+  text-decoration: none;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
   padding: 6em;
   animation: 1s ease-out 0s 1 slideInFromLeft;
   margin-left: 7em;
@@ -43,5 +48,11 @@ h3 {
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@media (max-width: 1015px) {
+  .cards {
+    padding: 2em 6em;
   }
 }

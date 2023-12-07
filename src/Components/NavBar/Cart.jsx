@@ -72,7 +72,9 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
                   <div className={styles.separate}>
                     <div>
                       <h4>{item.name}</h4>
-                      <p>Size: {item.size}</p>
+                      <p>
+                        Size: <span className={styles.size}>{item.size}</span>
+                      </p>
                     </div>
                     <div className={styles.increment}>
                       <button
@@ -108,8 +110,8 @@ const Cart = ({ onClose, showPopUp, handleOverlayClick }) => {
         </div>
         <div>
           <div className={styles.totalCost}>
-            <p>Subtotal</p>
-            <p>${calculateSubtotal().toFixed(2)}</p>
+            <p className={styles.subTotal}>Subtotal</p>
+            <p className={styles.subTotal}>${calculateSubtotal().toFixed(2)}</p>
           </div>
           <button className={styles.continueShoppingBtn} onClick={onClose}>
             CONTINUE SHOPPING

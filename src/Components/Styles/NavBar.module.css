@@ -36,7 +36,7 @@
 .navMenu {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
+  grid-gap: 40px;
   list-style: none;
   text-align: center;
   width: 70vw;
@@ -114,11 +114,7 @@ input:focus {
   gap: 1em;
 }
 
-@media screen and (max-width: 960px) {
-  .NavbarItems {
-    position: relative;
-  }
-
+@media screen and (max-width: 1015px) {
   .navBarContainer {
     display: flex;
     justify-content: space-between;

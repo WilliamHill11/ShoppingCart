@@ -134,10 +134,23 @@ button {
   }
 }
 
+.size {
+  color: black;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
 .totalCost {
   display: flex;
   justify-content: space-between;
   margin: 0 1em;
+}
+
+.subTotal {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: black;
 }
 
 @keyframes slide-in {

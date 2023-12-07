@@ -38,7 +38,41 @@ footer {
   text-align: center;
   padding: 10px;
   background-color: rgb(95, 94, 94);
-  color: white;
   bottom: 0;
   width: 100%;
+}
+
+.footerText {
+  color: black;
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .mission {
+    gap: 10px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .picture,
+  .picture2 {
+    padding: 0.5em;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+  }
+
+  .storyTitle {
+    padding: 0.25em;
+  }
+}
+
+@media (max-width: 500px) {
+  .picture,
+  .picture2 {
+    height: 250px; /* Reduced padding for smaller screens */
+  }
 }

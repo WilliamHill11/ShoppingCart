@@ -51,7 +51,9 @@ const About = () => {
         </section>
       </main>
 
-      <footer>&copy; 2023 The Saiyans</footer>
+      <footer>
+        <p className={styles.footerText}>&copy; 2023 The Saiyans</p>
+      </footer>
     </>
   );
 };
