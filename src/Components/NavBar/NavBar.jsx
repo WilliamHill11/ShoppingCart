@@ -6,11 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = ({ showPopUp, setShowPopUp, handleOverlayClick }) => {
-  const [click, setClick] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [button, setButton] = useState(true);
 
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -53,15 +58,15 @@ const NavBar = ({ showPopUp, setShowPopUp, handleOverlayClick }) => {
               height={'85px'}
             />
           </Link>
-          <div className={styles.menuIcon} onClick={handleClick}>
+          <div className={styles.menuIcon} onClick={toggleMenu}>
             <FontAwesomeIcon
-              icon={click ? faTimes : faBars}
+              icon={isMenuOpen ? faTimes : faBars}
               className={styles.icon}
             />
           </div>
           <ul
             className={
-              click ? `${styles.navMenu} ${styles.active}` : styles.navMenu
+              isMenuOpen ? `${styles.navMenu} ${styles.active}` : styles.navMenu
             }
           >
             <li className={styles.navItem}>
